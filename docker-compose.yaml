@@ -1,0 +1,12 @@
+---
+version: '3.3'
+services:
+  qgis-server:
+    image: camptocamp/qgis-server:3.28
+    container_name: qgis-server
+    ports:
+      - 81:80
+    environment:
+      QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES: /etc/qgisserver
+    volumes:
+      - ./data:/etc/qgisserver

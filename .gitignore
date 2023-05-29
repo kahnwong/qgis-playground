@@ -1,0 +1,5 @@
+.python-version
+data/
+
+# qgis
+symbology-style.db
