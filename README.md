@@ -15,6 +15,9 @@ make build
 make start <http://localhost:81> # !!! does not work on m1 mac
 ```
 
-## TODO
+## Notes
 
-- reduce vector resolution # use `GRASS commands -> v.generalize` (choose `snake`)
+### reduce vector resolution (permanent)
+
+- option 1: use `GRASS commands -> v.generalize` (choose `snake`)
+- option 2: use `Vector geometry -> simplify`, set tolerance to `0.01`

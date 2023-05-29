@@ -7,6 +7,7 @@ from qgis.core import QgsApplication
 from qgis.core import QgsCoordinateReferenceSystem
 from qgis.core import QgsProject
 from qgis.core import QgsVectorLayer
+from qgis.core import QgsVectorSimplifyMethod
 
 
 logger = logging.getLogger(__name__)
@@ -44,6 +45,11 @@ for index, layer in enumerate(glob.glob("data/layers/*.geojson")):
 
     vlayer = QgsVectorLayer(layer, slug, "ogr")
 
+    # set simplify: https://sourcegraph.com/github.com/qgis/QGIS/-/blob/tests/src/python/test_qgsvectorlayer.py?L3316%3A15=
+    simplify = QgsVectorSimplifyMethod()
+    simplify.setThreshold(3)
+    vlayer.setSimplifyMethod(simplify)
+
     # set crs
     crs = vlayer.crs()
     crs.fromEpsgId(CRS)  # WGS84
@@ -51,7 +57,10 @@ for index, layer in enumerate(glob.glob("data/layers/*.geojson")):
 
     project.addMapLayer(vlayer)
 
-    print(vlayer.extent())
+    # # temp: write to file:
+    # QgsVectorFileWriter.writeAsVectorFormat(
+    #     vlayer, f"output/layers/{slug}.geojson", "UTF-8", vlayer.crs(), "GeoJSONSeq"
+    # )
 
     if index == 0:
         canvas = vlayer.extent()  # init
