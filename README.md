@@ -17,4 +17,4 @@ make start <http://localhost:81> # !!! does not work on m1 mac
 
 ## TODO
 
-- reduce vector resolution
+- reduce vector resolution # use `GRASS commands -> v.generalize` (choose `snake`)
