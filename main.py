@@ -32,7 +32,7 @@ app = QApplication([])
 qgs = QgsApplication([], False)
 
 project = QgsProject.instance()
-project.setCrs(QgsCoordinateReferenceSystem(CRS))
+project.setCrs(QgsCoordinateReferenceSystem.fromEpsgId(CRS))
 root = project.layerTreeRoot()
 
 ###############
@@ -46,7 +46,7 @@ for index, layer in enumerate(glob.glob("data/layers/*.geojson")):
 
     # set crs
     crs = vlayer.crs()
-    crs.createFromId(CRS)  # WGS84
+    crs.fromEpsgId(CRS)  # WGS84
     vlayer.setCrs(crs)
 
     project.addMapLayer(vlayer)
