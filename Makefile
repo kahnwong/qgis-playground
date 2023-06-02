@@ -1,5 +1,5 @@
 build:
-	/Applications/QGIS.app/Contents/MacOS/bin/python3 main.py
+	/Applications/QGIS_o.app/Contents/MacOS/bin/python3 build.py
 
 start:
 	docker compose up
