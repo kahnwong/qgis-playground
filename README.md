@@ -21,3 +21,15 @@ make start <http://localhost:81> # !!! does not work on m1 mac
 
 - option 1: use `GRASS commands -> v.generalize` (choose `snake`)
 - option 2: use `Vector geometry -> simplify`, set tolerance to `0.01`
+
+## Data versioning
+
+### Pre-requisites
+
+```bash
+brew install dvc
+```
+
+### Usage
+
+<https://docs.karnwong.me/knowledge-base/data/tools/dvc>

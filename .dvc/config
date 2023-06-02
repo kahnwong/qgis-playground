@@ -1,0 +1,6 @@
+[core]
+    remote = storage
+['remote "storage"']
+    url = s3://qgis-server
+    profile = r2
+    endpointurl = https://68f5cb2e3be2156da348ee771d88e236.r2.cloudflarestorage.com

@@ -1,5 +1,8 @@
-.python-version
-data/
-
 # qgis
 symbology-style.db
+
+# python
+.python-version
+
+# data
+data/
