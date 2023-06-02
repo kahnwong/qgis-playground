@@ -2,7 +2,9 @@
 version: '3.3'
 services:
   qgis-server:
-    image: camptocamp/qgis-server:3.28
+    # image: camptocamp/qgis-server:3.28
+    build:
+      context: docker
     container_name: qgis-server
     ports:
       - 81:80
